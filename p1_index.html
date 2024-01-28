@@ -1,0 +1,85 @@
+<html>
+      <head>
+            <title>Even Odd Finder by Kamal Sir </title>
+            <style>
+                   *{font-size:40px; }
+                   body {background-color:lightblue;}
+                   .btn{width:20%; background-color:red;color:white;}
+            </style>
+            <script>
+		    function compute()
+                    {
+                    event.preventDefault();
+		    let num = document.getElementById("id_num");
+                    let msg = document.getElementById("id_msg");
+           	    let action = document.activeElement.value;
+
+		    if(num.value=="")
+                    {
+                    alert("u did not enter integer");
+                    msg.innerHTML="";
+                    num.focus();
+                    return;
+        	    }
+                    let n = parseInt(num.value);
+                    if (action == "M1")
+                    {
+                            let res = n % 2 == 0 ? "even1":"odd1";
+                            msg.innerHTML = res;
+                    }
+                    else if (action == "M2")
+                    {
+                           if (n % 2 == 0)
+                                     msg.innerHTML = "even2";
+                           else
+                                     msg.innerHTML = "odd2";
+                    }
+                    else if (action == "M3")
+                    {
+                             switch(n % 2)
+                             {
+                                  case 0 : msg.innerHTML="even3";
+                                                  break;
+                                  default:        msg.innerHTML="odd3";
+                    				  break;
+       			      }
+                   }
+                   }
+            </script>
+      </head>
+
+      <body>
+      <center>
+      <h1>Even Odd Finder</h1>
+      <form onsubmit="compute()">
+      <input type="number" placeholder="enter integer" id="id_num"/>
+      <br><br>
+      <input type="submit" value="M1" class="btn"/>
+      <input type="submit" value="M2" class="btn"/>
+      <input type="submit" value="M3" class="btn"/>
+      </form>
+      <h2 id="id_msg"></h2>
+      </center>
+      </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
